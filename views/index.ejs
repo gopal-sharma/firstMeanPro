@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <p>INSERT DATA</p>
+  <form action="/insert" method="post">
+    <label> username</label>
+     <input type="text" name="username">
+    <label> password</label>
+    <input type="text" name="password">
+    <label> Address</label>
+    <input type="text" name="address">
+    <button type="submit">INSERT</button>
+  </form>
+  <p>GET DATA</p>
+  <a href="/get-data">load data</a>
+    <%if(item.length>0){%>
+   <table border="1" width="100%">
+      <tr>
+        <td width="20%">username</td>
+        <td width="30%">password</td>
+        <td width="30%">Addresss</td>
+      </tr>
+
+      <tr>
+          <% for (var i in item){ %>
+        <td width="20%"><%=item[i].username;%></td>
+        <td width="30%"><%=item[i].password;%></td>
+        <td width="30%"><%=item[i].address;%></td>
+          </tr>
+        <%
+        }%>
+    </table>
+    <%}%>
+  </article>
+  </body>
+</html>
